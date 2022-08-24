@@ -3,5 +3,5 @@ import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContex
 export const Badge = () => {
   const { currency } = useCurrencyContext();
 
-  return <div>{currency} 110</div>;
+  return <div> 110 {currency}</div>;
 };

@@ -21,6 +21,7 @@ const ButtonEdit = styled.button`
   border: none;
   padding: 10px 30px;
   max-height: 36px;
+  max-width: 80px;
   background-color: ${Color.White};
   margin: 30px 20px 0 0;
 `;

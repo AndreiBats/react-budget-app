@@ -1,11 +1,13 @@
 import { createContext, FC, useContext, useState } from "react";
 import { IBudgetContext, IBudgetProviderProps } from "./types";
 
-const BudgetContext = createContext<IBudgetContext>({} as IBudgetContext);
+export const BudgetContext = createContext<IBudgetContext>(
+  {} as IBudgetContext
+);
 
 const useBudgetContextValue = () => {
   const [budgetContext, setBudgetContext] = useState<IBudgetContext>({
-    budget: "1000",
+    budget: 0,
     setBudget: (newBudget) => {
       setBudgetContext((bdg) => ({ ...bdg, budget: newBudget }));
     },

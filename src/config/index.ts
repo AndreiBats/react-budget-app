@@ -10,4 +10,5 @@ export enum Color {
   Lilac = "#CCD5FF",
   Pink = "#E7BBE3",
   White = "#FFFFFF",
+  Red = "#FF0000",
 }

@@ -3,7 +3,6 @@ import { Color } from "../../config";
 
 const StyledBudgetApp = styled.div`
   padding: 10px 15px;
-  background-color: ${Color.White};
   margin-top: 30px;
 `;
 

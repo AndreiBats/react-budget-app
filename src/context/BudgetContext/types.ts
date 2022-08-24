@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
 export interface IBudgetContext {
-  budget: string;
-  setBudget: (budget: string) => void;
+  budget: number;
+  setBudget: (budget: number) => void;
 }
 
 export interface IBudgetProviderProps {
