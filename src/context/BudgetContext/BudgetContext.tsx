@@ -1,5 +1,26 @@
-import React from "react";
+import { createContext, FC, useContext, useState } from "react";
+import { IBudgetContext, IBudgetProviderProps } from "./types";
 
-export const BudgetContext = () => {
-  return <div>BudgetContext</div>;
+const BudgetContext = createContext<IBudgetContext>({} as IBudgetContext);
+
+const useBudgetContextValue = () => {
+  const [budgetContext, setBudgetContext] = useState<IBudgetContext>({
+    budget: "1000",
+    setBudget: (newBudget) => {
+      setBudgetContext((bdg) => ({ ...bdg, budget: newBudget }));
+    },
+  });
+  return budgetContext;
+};
+
+export const useBudgetContext = () => useContext<IBudgetContext>(BudgetContext);
+
+export const BudgetContextProvider: FC<IBudgetProviderProps> = ({
+  children,
+}) => {
+  return (
+    <BudgetContext.Provider value={useBudgetContextValue()}>
+      {children}
+    </BudgetContext.Provider>
+  );
 };

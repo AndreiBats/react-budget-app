@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color } from "../../types";
+import { Color } from "../../config";
 
 const StyledBudgetApp = styled.div`
   padding: 10px 15px;
@@ -14,7 +14,7 @@ const BudgetHeader = styled.div`
   margin: 30px 0;
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;

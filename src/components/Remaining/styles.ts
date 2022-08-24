@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color } from "../../types";
+import { Color } from "../../config";
 
 const StyledRemaining = styled.div`
   background-color: ${Color.Lilac};

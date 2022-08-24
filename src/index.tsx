@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./App";
+import { BudgetContextProvider } from "./context/BudgetContext/BudgetContext";
+import { CurrencyContextProvider } from "./context/CurrencyContext/CurrencyContext";
 import { GlobalStyles } from "./ui/GlobalStyles";
 
 const root = ReactDOM.createRoot(
@@ -9,6 +11,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <GlobalStyles />
-    <App />
+    <BudgetContextProvider>
+      <CurrencyContextProvider>
+        <App />
+      </CurrencyContextProvider>
+    </BudgetContextProvider>
   </React.StrictMode>
 );

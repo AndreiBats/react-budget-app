@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color } from "../../types";
+import { Color } from "../../config";
 
 const StyledBudget = styled.div`
   display: flex;
