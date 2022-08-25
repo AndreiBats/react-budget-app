@@ -6,6 +6,6 @@ const StyledExpensesItem = styled.div`
 
 const Name = styled.span``;
 
-const Close = styled.span``;
+const CloseButton = styled.button``;
 
-export { Name, StyledExpensesItem, Close };
+export { Name, StyledExpensesItem, CloseButton };

@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { Color } from "../../config";
 
 const StyledBudgetApp = styled.div`
-  padding: 10px 15px;
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const BudgetHeader = styled.div`
