@@ -1,22 +1,25 @@
-import React, { ChangeEvent } from "react";
-import { StyledInput } from "./styles";
+import { ChangeEvent } from "react";
+import { StyledSearchInput } from "./styles";
 
-export interface IInput {
+export interface ISearchInput {
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   type: string;
   placeholder: string;
-  min: string;
 }
 
-export const Input = ({ value, onChange, type, placeholder, min }: IInput) => {
+export const SearchInput = ({
+  value,
+  onChange,
+  type,
+  placeholder,
+}: ISearchInput) => {
   return (
-    <StyledInput
+    <StyledSearchInput
       value={value}
       onChange={onChange}
       type={type}
       placeholder={placeholder}
-      min={min}
     />
   );
 };

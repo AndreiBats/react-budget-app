@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Color } from "../../config";
 
-const StyledRemaining = styled.div<{ $isNegative: number }>`
-  background-color: ${({ $isNegative }) =>
+const StyledRemaining = styled.div<{ $negative: number }>`
+  background-color: ${({ $negative: $isNegative }) =>
     $isNegative >= 0 ? Color.Lilac : Color.Red};
   border-radius: 10px;
   margin-bottom: 20px;

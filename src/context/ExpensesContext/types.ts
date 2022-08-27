@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 export type InputValues = {
   name: string;
-  cost: number;
+  cost: string;
   id: string;
 };
 

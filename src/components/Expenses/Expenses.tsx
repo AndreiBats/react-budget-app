@@ -1,16 +1,15 @@
 import { useInput } from "../../hooks/useInput";
+import { SearchInput } from "../SearchInput/SearchInput";
 import { Title } from "../BudgetApp/styles";
-import { Input } from "../BudgetInput/BudgetInput";
 import { ExpensesList } from "../ExpensesList/ExpensesList";
 import { StyledExpenses } from "./styles";
 
 export const Expenses = () => {
-  const expensesInput = useInput();
-
+  const searchInput = useInput();
   return (
     <StyledExpenses>
       <Title>Expenses</Title>
-      <Input {...expensesInput} type="text" placeholder="search" />
+      <SearchInput {...searchInput} type="text" placeholder="search..." />
       <ExpensesList />
     </StyledExpenses>
   );

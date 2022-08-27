@@ -7,12 +7,11 @@ import {
   StyledAddExpenses,
 } from "./styles";
 import { v4 as uuidv4 } from "uuid";
-import { useContext } from "react";
 import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 
 type DoneFormValues = {
   name: string;
-  cost: number;
+  cost: string;
 };
 
 export const AddExpenses = () => {
@@ -31,11 +30,13 @@ export const AddExpenses = () => {
       <ExpensesName
         type="text"
         placeholder="enter name..."
+        maxLength={15}
         {...register("name")}
       />
       <ExpensesCost
         type="number"
         placeholder="enter cost..."
+        maxLength={5}
         {...register("cost")}
       />
       <DoneButton type="submit">Done</DoneButton>

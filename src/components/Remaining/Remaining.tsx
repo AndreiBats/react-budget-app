@@ -16,11 +16,19 @@ export const Remaining = () => {
       .map((array: InputValues) => array.cost)
       .reduce((total: number, cost: number) => +total + +cost, 0);
 
+  const overspending = Math.abs(totalRemaining);
+
   return (
-    <StyledRemaining $isNegative={totalRemaining}>
-      <SubTitle>
-        Remaining: {totalRemaining} {currency}
-      </SubTitle>
+    <StyledRemaining $negative={totalRemaining}>
+      {totalRemaining >= 0 ? (
+        <SubTitle>
+          Remaining: {totalRemaining} {currency}
+        </SubTitle>
+      ) : (
+        <SubTitle>
+          Overspending by {overspending} {currency}
+        </SubTitle>
+      )}
     </StyledRemaining>
   );
 };
