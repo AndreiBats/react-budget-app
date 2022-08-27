@@ -4,6 +4,7 @@ import { Color } from "../../config";
 const StyledSpent = styled.div`
   background-color: ${Color.Pink};
   border-radius: 10px;
+  margin-bottom: 30px;
 `;
 
 const SubTitle = styled.h3`

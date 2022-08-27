@@ -1,7 +1,16 @@
 import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { StyledBadge } from "./styles";
 
-export const Badge = () => {
+interface IProps {
+  cost: string;
+}
+
+export const Badge = ({ cost }: IProps) => {
   const { currency } = useCurrencyContext();
 
-  return <div> 110 {currency}</div>;
+  return (
+    <StyledBadge>
+      {cost} {currency}
+    </StyledBadge>
+  );
 };

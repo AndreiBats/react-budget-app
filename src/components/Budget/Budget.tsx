@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
 import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 import { useInput } from "../../hooks/useInput";
@@ -8,13 +7,18 @@ import { SubTitle, StyledBudget, ButtonEdit } from "./styles";
 
 export const Budget = () => {
   const budgetInput = useInput();
-  const { budget } = useBudgetContext();
+  const { budget, setBudget } = useBudgetContext();
   const { currency } = useCurrencyContext();
-  const [isEdit, toggleIsEdit] = useToggle();
+  const [isActive, toggleIsActive] = useToggle(false);
+
+  const handleButtonValue = () => {
+    setBudget(+budgetInput.value);
+    toggleIsActive();
+  };
 
   return (
     <StyledBudget>
-      {isEdit ? (
+      {isActive ? (
         <Input
           {...budgetInput}
           type="number"
@@ -27,8 +31,8 @@ export const Budget = () => {
         </SubTitle>
       )}
 
-      <ButtonEdit type="button" onClick={toggleIsEdit}>
-        {isEdit ? "Save" : "Edit"}
+      <ButtonEdit type="button" onClick={handleButtonValue}>
+        {isActive ? "Save" : "Edit"}
       </ButtonEdit>
     </StyledBudget>
   );

@@ -6,7 +6,7 @@ export interface IInput {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   type: string;
   placeholder: string;
-  min: string;
+  min?: string;
 }
 
 export const Input = ({ value, onChange, type, placeholder, min }: IInput) => {
