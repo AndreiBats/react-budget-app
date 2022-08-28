@@ -2,7 +2,7 @@ import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContex
 import { StyledBadge } from "./styles";
 
 interface IProps {
-  cost: string;
+  cost: number;
 }
 
 export const Badge = ({ cost }: IProps) => {

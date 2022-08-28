@@ -5,20 +5,15 @@ import { CloseButton, Name, StyledExpensesItem } from "./styles";
 
 interface IProps {
   name: string;
-  cost: string;
+  cost: number;
   id: string;
 }
 
 export const ExpensesItem = ({ name, cost, id }: IProps) => {
-  const { expenses, setExpenses } = useExpensesContext();
+  const { deleteItem } = useExpensesContext();
 
   const handleDeleteButton = () => {
-    const newArray = expenses.filter(
-      (element: InputValues): boolean => element.id !== id
-    );
-
-    setExpenses(newArray);
-    console.log(newArray);
+    deleteItem(id);
   };
 
   return (

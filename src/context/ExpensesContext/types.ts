@@ -2,13 +2,14 @@ import { ReactNode } from "react";
 
 export type InputValues = {
   name: string;
-  cost: string;
+  cost: number;
   id: string;
 };
 
 export interface IExpensesContext {
-  expenses: any;
+  expenses: InputValues[];
   setExpenses: (newExpenses: InputValues) => void;
+  deleteItem: (id: string) => void;
 }
 
 export interface IExpensesProviderProps {
