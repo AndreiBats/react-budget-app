@@ -9,6 +9,6 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    background-color: ${Color.DarkGrey};    
+    background-color: ${Color.LightBlue};    
 }
 `;

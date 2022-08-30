@@ -9,7 +9,7 @@ export type InputValues = {
 export interface IExpensesContext {
   expenses: InputValues[];
   setExpenses: (newExpenses: InputValues) => void;
-  deleteItem: (id: string) => void;
+  deleteExpenses: (id: string) => void;
 }
 
 export interface IExpensesProviderProps {

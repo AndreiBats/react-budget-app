@@ -7,4 +7,8 @@ const StyledExpensesList = styled.ul`
   max-height: 213px;
 `;
 
-export { StyledExpensesList };
+const Oooops = styled.p`
+  text-align: center;
+`;
+
+export { StyledExpensesList, Oooops };

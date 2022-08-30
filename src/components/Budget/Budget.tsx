@@ -16,6 +16,10 @@ export const Budget = () => {
     toggleIsActive();
   };
 
+  const handleButtonEdit = () => {
+    toggleIsActive();
+  };
+
   return (
     <StyledBudget>
       {isActive ? (
@@ -30,10 +34,15 @@ export const Budget = () => {
           Budget: {budget} {currency}
         </SubTitle>
       )}
-
-      <ButtonEdit type="button" onClick={handleButtonValue}>
-        {isActive ? "Save" : "Edit"}
-      </ButtonEdit>
+      {isActive ? (
+        <ButtonEdit type="button" onClick={handleButtonValue}>
+          Save
+        </ButtonEdit>
+      ) : (
+        <ButtonEdit type="button" onClick={handleButtonEdit}>
+          Edit
+        </ButtonEdit>
+      )}
     </StyledBudget>
   );
 };

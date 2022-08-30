@@ -1,5 +1,4 @@
 import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { InputValues } from "../../context/ExpensesContext/types";
 import { Badge } from "../Badge/Badge";
 import { CloseButton, Name, StyledExpensesItem } from "./styles";
 
@@ -10,10 +9,10 @@ interface IProps {
 }
 
 export const ExpensesItem = ({ name, cost, id }: IProps) => {
-  const { deleteItem } = useExpensesContext();
+  const { deleteExpenses } = useExpensesContext();
 
   const handleDeleteButton = () => {
-    deleteItem(id);
+    deleteExpenses(id);
   };
 
   return (
