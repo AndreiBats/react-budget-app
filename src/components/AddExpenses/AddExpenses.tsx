@@ -38,6 +38,7 @@ export const AddExpenses = () => {
         type="number"
         placeholder="enter cost..."
         max="99999"
+        min="1"
         {...register("cost", { required: true })}
       />
       <DoneButton type="submit">Done</DoneButton>
