@@ -15,7 +15,7 @@ type DoneFormValues = {
 };
 
 export const AddExpenses = () => {
-  const { setExpenses } = useExpensesContext();
+  const { setExpense: setExpenses } = useExpensesContext();
   const { register, handleSubmit, reset } = useForm<DoneFormValues>();
   const onSubmit: SubmitHandler<DoneFormValues> = (formValues) => {
     const newExpenses = { ...formValues, id: uuidv4() };

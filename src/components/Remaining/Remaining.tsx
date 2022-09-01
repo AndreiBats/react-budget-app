@@ -1,7 +1,6 @@
 import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
 import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { InputValues } from "../../context/ExpensesContext/types";
 import { SubTitle } from "../Remaining/styles";
 import { StyledRemaining } from "./styles";
 
@@ -11,22 +10,19 @@ export const Remaining = () => {
   const { budget } = useBudgetContext();
 
   const totalRemaining =
-    budget -
-    expenses
-      .map((array: InputValues) => array.cost)
-      .reduce((total: number, cost: number) => +total + +cost, 0);
+    budget - expenses.reduce((total: number, { cost }) => total + cost, 0);
 
-  const overspending = Math.abs(totalRemaining);
+  const overspending = totalRemaining > 0;
 
   return (
     <StyledRemaining $negative={totalRemaining}>
-      {totalRemaining >= 0 ? (
+      {overspending ? (
         <SubTitle>
           Remaining: {totalRemaining} {currency}
         </SubTitle>
       ) : (
         <SubTitle>
-          Overspending by {overspending} {currency}
+          Overspending by {Math.abs(totalRemaining)} {currency}
         </SubTitle>
       )}
     </StyledRemaining>

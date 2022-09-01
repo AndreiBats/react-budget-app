@@ -3,7 +3,7 @@ import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContex
 import { useInput } from "../../hooks/useInput";
 import { useToggle } from "../../hooks/useToggle";
 import { Input } from "../BudgetInput/BudgetInput";
-import { SubTitle, StyledBudget, ButtonEdit } from "./styles";
+import { SubTitle, StyledBudget, Button } from "./styles";
 
 export const Budget = () => {
   const budgetInput = useInput();
@@ -23,25 +23,26 @@ export const Budget = () => {
   return (
     <StyledBudget>
       {isActive ? (
-        <Input
-          {...budgetInput}
-          type="number"
-          placeholder="Enter budget..."
-          min="0"
-        />
+        <>
+          <Input
+            {...budgetInput}
+            type="number"
+            placeholder="Enter budget..."
+            min="0"
+          />
+          <Button type="button" onClick={handleButtonValue}>
+            Save
+          </Button>
+        </>
       ) : (
-        <SubTitle>
-          Budget: {budget} {currency}
-        </SubTitle>
-      )}
-      {isActive ? (
-        <ButtonEdit type="button" onClick={handleButtonValue}>
-          Save
-        </ButtonEdit>
-      ) : (
-        <ButtonEdit type="button" onClick={handleButtonEdit}>
-          Edit
-        </ButtonEdit>
+        <>
+          <SubTitle>
+            Budget: {budget} {currency}
+          </SubTitle>
+          <Button type="button" onClick={handleButtonEdit}>
+            Edit
+          </Button>
+        </>
       )}
     </StyledBudget>
   );

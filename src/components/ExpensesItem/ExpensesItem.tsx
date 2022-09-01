@@ -9,7 +9,7 @@ interface IProps {
 }
 
 export const ExpensesItem = ({ name, cost, id }: IProps) => {
-  const { deleteExpenses } = useExpensesContext();
+  const { deleteExpense: deleteExpenses } = useExpensesContext();
 
   const handleDeleteButton = () => {
     deleteExpenses(id);

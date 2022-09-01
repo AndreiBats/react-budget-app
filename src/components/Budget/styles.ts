@@ -16,7 +16,7 @@ const SubTitle = styled.h3`
   padding: 36px 70px 40px 20px;
 `;
 
-const ButtonEdit = styled.button`
+const Button = styled.button`
   border-radius: 10px;
   border: none;
   padding: 10px 30px;
@@ -26,4 +26,4 @@ const ButtonEdit = styled.button`
   margin: 30px 20px 0 0;
 `;
 
-export { SubTitle, StyledBudget, ButtonEdit };
+export { SubTitle, StyledBudget, Button };
